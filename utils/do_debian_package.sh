@@ -170,8 +170,8 @@ if [ ! -d "${GITHUB_FORK}_zoneminder_release" ]; then
     echo "git clone ${GITHUB_FORK}_ZoneMinder.git ${GITHUB_FORK}_zoneminder_release"
     git clone "${GITHUB_FORK}_ZoneMinder.git" "${GITHUB_FORK}_zoneminder_release"
   else
-    echo "git clone https://github.com/$GITHUB_FORK/ZoneMinder.git ${GITHUB_FORK}_zoneminder_release"
-    git clone "https://github.com/$GITHUB_FORK/ZoneMinder.git" "${GITHUB_FORK}_zoneminder_release"
+    echo "git clone https://github.com/$GITHUB_FORK/zoneminder.git ${GITHUB_FORK}_zoneminder_release"
+    git clone "https://github.com/$GITHUB_FORK/zoneminder.git" "${GITHUB_FORK}_zoneminder_release"
   fi
 else
   echo "release dir already exists. Please remove it."
