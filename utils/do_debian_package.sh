@@ -292,7 +292,7 @@ EOF
     echo "Status: $?"
     DEBUILD=debuild
   else
-    if [ $TYPE == "local" ]; then
+    if [ $TYPE == "local" ] || [ $TYPE == "fork" ]; then
       # Auto-install all ZoneMinder's depedencies using the Debian control file
       sudo apt-get install devscripts equivs
       sudo mk-build-deps -ir ./debian/control
@@ -343,6 +343,8 @@ EOF
       if [[ "$REPLY" == [yY] ]]; then
         dput $PPA $SC
       fi;
+    elif [ $TYPE == "fork" ]; then
+      echo "Finishing...";
     else
       echo "dputting to $PPA";
       dput $PPA $SC
