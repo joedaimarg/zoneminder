@@ -298,6 +298,8 @@ EOF
       sudo mk-build-deps -ir ./debian/control
       echo "Status: $?"
       DEBUILD="debuild -i -us -uc -b"
+    elif [ $TYPE == "fork" ]; then
+      DEBUILD="debuild -i -us -uc -b"
     else 
       # Source build, don't need build depends.
       DEBUILD="debuild -S -sa"
