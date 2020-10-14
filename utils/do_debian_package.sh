@@ -292,7 +292,7 @@ EOF
     echo "Status: $?"
     DEBUILD=debuild
   else
-    if [ $TYPE == "local" ] || [ $TYPE == "fork" ]; then
+    if [ $TYPE == "local" ] then
       # Auto-install all ZoneMinder's depedencies using the Debian control file
       sudo apt-get install devscripts equivs
       sudo mk-build-deps -ir ./debian/control
